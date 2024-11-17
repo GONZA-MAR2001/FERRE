@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Lateral Desplegable</title>
+  <style>
+    /* Reset de estilo de margin y padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Contenedor del menú lateral */
+    .side-menu {
+      position: fixed;
+      top: 20%;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 0;
+      background-color: #333;
+      border-radius: 10px 0 0 10px;
+      z-index: 1000;
+      transition: width 0.3s; /* Efecto de transición para expansión */
+      width: 60px; /* Ancho inicial del menú (solo íconos) */
+      overflow: hidden; /* Oculta el texto inicialmente */
+    }
+
+    /* Expandir menú al pasar el mouse */
+    .side-menu:hover {
+      width: 200px; /* Ancho expandido del menú */
+    }
+
+    /* Estilos de los iconos y texto */
+    .side-menu a {
+      width: 100%;
+      height: 50px;
+      background-color: #006d75; /* Color de fondo de cada ícono */
+      color: #fff;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      padding-left: 10px;
+      border-radius: 5px;
+      font-size: 24px;
+      transition: background-color 0.3s;
+    }
+
+    .side-menu a:hover {
+      background-color: #008c97;
+    }
+
+    /* Icono en cada enlace */
+    .side-menu a .icon {
+      margin-right: 10px;
+    }
+
+    /* Texto adicional que se muestra al expandir */
+    .side-menu a .text {
+      font-size: 16px;
+      opacity: 0; /* Oculto inicialmente */
+      transition: opacity 0.3s;
+    }
+
+    /* Mostrar texto al hacer hover en el menú */
+    .side-menu:hover a .text {
+      opacity: 1; /* Muestra el texto al expandir */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menú lateral con iconos y texto desplegable -->
+  <div class="side-menu">
+    <a href="#q10" title="Acceso Q10">
+      <span class="icon">🗂️</span>
+      <span class="text">Acceso Q10</span>
+    </a>
+    <a href="#directorio" title="Directorio">
+      <span class="icon">📇</span>
+      <span class="text">Directorio</span>
+    </a>
+    <a href="#soporte" title="Soporte">
+      <span class="icon">🛠️</span>
+      <span class="text">Soporte</span>
+    </a>
+  </div>
+
+  <!-- Contenido de ejemplo -->
+  <div style="margin: 20px;">
+    <h1>Contenido de la página</h1>
+    <p>Haz clic en los iconos del menú lateral para navegar por las secciones.</p>
+  </div>
+
+</body>
+</html>
